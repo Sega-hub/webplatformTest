@@ -37,6 +37,17 @@ import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 
+
+import LightIcon from '@material-ui/icons/WbSunny';
+import { myTheme } from './themes/mts-theme';
+import { UnifiedThemeProvider} from '@backstage/theme';
+
+import { ExplorePage } from '@backstage-community/plugin-explore';
+
+import { HomepageCompositionRoot } from '@backstage/plugin-home';
+import { HomePage } from './components/home/HomePage';
+
+
 const app = createApp({
   apis,
   bindRoutes({ bind }) {
@@ -56,6 +67,15 @@ const app = createApp({
       catalogIndex: catalogPlugin.routes.catalogIndex,
     });
   },
+  themes: [{
+    id: 'mts-theme',
+    title: 'MTS Theme',
+    variant: 'light',
+    icon: <LightIcon />,
+    Provider: ({ children }) => (
+      <UnifiedThemeProvider theme={myTheme} children={children} />
+    ),
+  }],
   components: {
     SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
   },
@@ -63,7 +83,10 @@ const app = createApp({
 
 const routes = (
   <FlatRoutes>
-    <Route path="/" element={<Navigate to="catalog" />} />
+    <Route path="/" element={<Navigate to="explore" />} /> 
+    {/* <Route path="/" element={<HomepageCompositionRoot />}>
+      {HomePage}
+    </Route>; */}
     <Route path="/catalog" element={<CatalogIndexPage />} />
     <Route
       path="/catalog/:namespace/:kind/:name"
@@ -80,7 +103,19 @@ const routes = (
         <ReportIssue />
       </TechDocsAddons>
     </Route>
-    <Route path="/create" element={<ScaffolderPage />} />
+    <Route path="/create" element={<ScaffolderPage 
+     groups={[
+      {
+        title: "Cloud Resources",
+        filter: entity =>
+          entity?.metadata?.tags?.includes('ocean') ?? false,
+      },
+      {
+        title: "Product Factory Resources",
+        filter: entity =>
+          entity?.metadata?.tags?.includes('pf') ?? false,
+      },
+    ]}/>} />
     <Route path="/api-docs" element={<ApiExplorerPage />} />
     <Route
       path="/catalog-import"
@@ -95,6 +130,7 @@ const routes = (
     </Route>
     <Route path="/settings" element={<UserSettingsPage />} />
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
+    <Route path="/explore" element={<ExplorePage />} />
   </FlatRoutes>
 );
 

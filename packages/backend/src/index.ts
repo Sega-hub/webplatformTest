@@ -14,6 +14,7 @@ backend.add(import('@backstage/plugin-app-backend/alpha'));
 backend.add(import('@backstage/plugin-proxy-backend/alpha'));
 backend.add(import('@backstage/plugin-scaffolder-backend/alpha'));
 backend.add(import('@backstage/plugin-techdocs-backend/alpha'));
+backend.add(import('@backstage/plugin-catalog-backend-module-gitlab'));
 
 // auth plugin
 backend.add(import('@backstage/plugin-auth-backend'));
@@ -50,5 +51,12 @@ backend.add(import('@backstage/plugin-search-backend-module-techdocs/alpha'));
 
 // kubernetes
 backend.add(import('@backstage/plugin-kubernetes-backend/alpha'));
+
+// explore plugin
+backend.add(import('@backstage-community/plugin-explore-backend'));
+
+// tech insights plugin
+backend.add(import('@backstage-community/plugin-tech-insights-backend'));
+backend.add(import('@backstage-community/plugin-tech-insights-backend-module-jsonfc'));
 
 backend.start();

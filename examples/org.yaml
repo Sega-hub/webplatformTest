@@ -5,13 +5,26 @@ kind: User
 metadata:
   name: guest
 spec:
-  memberOf: [guests]
+  memberOf: [EP_ProductCatalogue_Team]
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-group
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: guests
+  name: EP_ProductCatalogue_Team
 spec:
   type: team
+  displayName: EP Product Catalogue Team
+  email: EP_ProductCatalogue_Team@mts.ru
+  children: []
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: biz-platforms-team
+spec:
+  type: team
+  displayName: ИТ-кластер "Бизнес платформы"
+  email: biz-platforms-team@mts.ru
   children: []

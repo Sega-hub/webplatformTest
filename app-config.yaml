@@ -1,9 +1,9 @@
 app:
-  title: Scaffolded Backstage App
+  title: The Platform Portal
   baseUrl: http://localhost:3000
 
 organization:
-  name: My Company
+  name: The Platform
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -58,7 +58,7 @@ proxy:
 techdocs:
   builder: 'local' # Alternatives - 'external'
   generator:
-    runIn: 'docker' # Alternatives - 'local'
+    runIn: 'local' # Alternatives - 'docker'
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
 
@@ -76,12 +76,11 @@ catalog:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
   rules:
-    - allow: [Component, System, API, Resource, Location]
+    - allow: [Domain, Component, System, API, Resource, Location, Group, User]
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
       target: ../../examples/entities.yaml
-
     # Local example template
     - type: file
       target: ../../examples/template/template.yaml
@@ -107,7 +106,34 @@ catalog:
 kubernetes:
   # see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
 
+explore:
+  tools:
+    - title: Kafka
+      description: Apache Kafka
+      url: /ocean
+      image: https://data.it-novum.com/wp-content/uploads/2021/02/apache_kafka_logo-1200x547.png
+      tags:
+        - queue
+        - kafka
+
 # see https://backstage.io/docs/permissions/getting-started for more on the permission framework
 permission:
   # setting this to `false` will disable permissions
   enabled: true
+
+
+techInsights:
+  factChecker:
+    checks:
+      groupOwnerCheck:
+        type: json-rules-engine
+        name: Group Owner Check
+        description: Verifies that a group has been set as the spec.owner for this entity
+        factIds:
+          - entityOwnershipFactRetriever
+        rule:
+          conditions:
+            all:
+              - fact: hasGroupOwner
+                operator: equal
+                value: true
