@@ -79,21 +79,7 @@ spec:
   system: ep
 
 
----
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: S3 Bucket
-  tag: ocean
-  title: S3 Bucket on Ocean
-  annotations:
-     backstage.io/techdocs-entity: system:default/ep
-     backstage.io/techdocs-ref: dir:./overview/services/
-spec:
-  type: service
-  lifecycle: experimental
-  owner: EP_ProductCatalogue_Team
-  system: ep
+
 # ---
 
 # apiVersion: backstage.io/v1alpha1
