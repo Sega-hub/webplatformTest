@@ -1,5 +1,4 @@
 import {
-  coreServices,
   createBackendModule,
 } from '@backstage/backend-plugin-api';
 
