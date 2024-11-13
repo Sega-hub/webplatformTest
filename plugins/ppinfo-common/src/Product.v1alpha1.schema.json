@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "ProductV1alpha1",
+  "description": "MTS Product entity schema",
+  "examples": [
+    {
+      "apiVersion": "mts.ru/v1alpha1",
+      "kind": "Product",
+      "metadata": {
+        "name": "ppinfo-product",
+        "title": "My Product",
+        "description": "Self-service customer portal",
+        "tags": ["internal"]
+      },
+      "spec": {
+        "owner": "team-a",
+        "type": "internal",
+        "parameters": {
+          "required": ["name", "description"],
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string",
+              "description": "Unique name of the product"
+            },
+            "description": {
+              "title": "Description",
+              "type": "string",
+              "description": "Description of the product"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Entity"
+    },
+    {
+      "type": "object",
+      "required": ["spec"],
+      "properties": {
+        "apiVersion": {
+          "enum": ["mts.ru/v1alpha1"]
+        },
+        "kind": {
+          "enum": ["Product"]
+        },
+        "spec": {
+          "type": "object",
+          "required": ["type"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "The type of the product.",
+              "examples": ["internal"],
+              "minLength": 1
+            },
+            "owner": {
+              "type": "string",
+              "description": "The user (or group) owner of the product",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -294,6 +294,8 @@ const apiPage = (
   </EntityLayout>
 );
 
+const customEntityFilterKind = ['Component', 'Product'];
+
 const userPage = (
   <EntityLayout>
     <EntityLayout.Route path="/" title="Overview">
@@ -303,7 +305,7 @@ const userPage = (
           <EntityUserProfileCard variant="gridItem" />
         </Grid>
         <Grid item xs={12} md={6}>
-          <EntityOwnershipCard variant="gridItem" />
+          <EntityOwnershipCard variant="gridItem"/>
         </Grid>
       </Grid>
     </EntityLayout.Route>
@@ -319,7 +321,7 @@ const groupPage = (
           <EntityGroupProfileCard variant="gridItem" />
         </Grid>
         <Grid item xs={12} md={6}>
-          <EntityOwnershipCard variant="gridItem" />
+          <EntityOwnershipCard variant="gridItem" entityFilterKind={customEntityFilterKind}/>
         </Grid>
         <Grid item xs={12} md={6}>
           <EntityMembersListCard />
