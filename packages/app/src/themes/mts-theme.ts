@@ -50,7 +50,7 @@ import {
         },
       },
     }),
-    fontFamily: 'MTS Compact',
+    fontFamily: 'MTS Text',
     // components: {
     //   MuiButton: {
     //     styleOverrides: {

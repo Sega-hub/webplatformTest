@@ -224,3 +224,47 @@ spec:
       - title: Open in catalog
         icon: catalog
         entityRef: ${{ steps['register'].output.entityRef }}
+
+---
+apiVersion: scaffolder.backstage.io/v1beta3
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-template
+kind: Template
+metadata:
+  name: product-onboarding
+  title: Onboard new Product on the platform
+  description: This wizard helps to onboard new product on the platform
+spec:
+  owner: user:guest
+  type: product
+
+  # These parameters are used to generate the input form in the frontend, and are
+  # used to gather input data for the execution of the template.
+  parameters:
+  - title: Fill in some details
+    properties:
+        name:
+          title: Код продукта
+          type: string
+          description: Код продукта PPInfo
+          # ui:field: EntityNamePicker
+          # ui:autofocus: true
+        description:
+          title: Описание продукта
+          type: string
+          description: Краткое описание
+        system:
+          title: Владелец
+          type: string
+          description: Команда продукта
+          ui:field: EntityPicker
+          ui:options:
+            allowedKinds:
+              - Group
+            defaultKind: Group
+  steps:
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ name }}
+        catalogInfoPath: '/import-product.yaml'

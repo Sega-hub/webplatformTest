@@ -245,6 +245,33 @@ const defaultEntityPage = (
   </EntityLayout>
 );
 
+const customEntityPage = (
+  <EntityLayout>
+    <EntityLayout.Route path="/" title="Overview">
+      <Grid container spacing={3} alignItems="stretch">
+      {entityWarningContent}
+        <Grid item md={6}>
+          <EntityAboutCard variant="gridItem" />
+        </Grid>
+        <Grid item md={6} xs={12}>
+          <EntityCatalogGraphCard variant="gridItem" height={200} />
+        </Grid>
+
+        <Grid item md={12} >
+          <EntityLinksCard />
+        </Grid>
+        {/* <Grid item md={8} xs={12}>
+          <EntityHasSubcomponentsCard variant="gridItem" />
+        </Grid> */}
+      </Grid>
+    </EntityLayout.Route>
+
+    <EntityLayout.Route path="/docs" title="Docs">
+      {techdocsContent}
+    </EntityLayout.Route>
+  </EntityLayout>
+);
+
 const componentPage = (
   <EntitySwitch>
     <EntitySwitch.Case if={isComponentType('service')}>
@@ -381,17 +408,22 @@ const systemPage = (
   </EntityLayout>
 );
 
+const productEntityFilterKind = ['Product'];
+
 const domainPage = (
   <EntityLayout>
     <EntityLayout.Route path="/" title="Overview">
       <Grid container spacing={3} alignItems="stretch">
         {entityWarningContent}
-        <Grid item md={6}>
+        {/* <Grid item md={6}>
           <EntityAboutCard variant="gridItem" />
+        </Grid> */}
+        <Grid item xs={12} md={6}>
+          <EntityOwnershipCard variant="gridItem" entityFilterKind={productEntityFilterKind}/>
         </Grid>
-        <Grid item md={6} xs={12}>
+        {/* <Grid item md={6} xs={12}>
           <EntityCatalogGraphCard variant="gridItem" height={400} />
-        </Grid>
+        </Grid> */}
         <Grid item md={6}>
           <EntityHasSystemsCard variant="gridItem" />
         </Grid>
@@ -409,6 +441,6 @@ export const entityPage = (
     <EntitySwitch.Case if={isKind('system')} children={systemPage} />
     <EntitySwitch.Case if={isKind('domain')} children={domainPage} />
 
-    <EntitySwitch.Case>{defaultEntityPage}</EntitySwitch.Case>
+    <EntitySwitch.Case>{customEntityPage}</EntitySwitch.Case>
   </EntitySwitch>
 );

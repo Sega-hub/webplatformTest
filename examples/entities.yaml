@@ -1,13 +1,3 @@
-apiVersion: backstage.io/v1alpha1
-kind: Domain
-metadata:
-  name: marketing
-  title: Развитие экосистемы и маркетинг
-  description: Marketing
-spec:
-  owner: biz-platforms-team
-
----
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-system
 apiVersion: backstage.io/v1alpha1
 kind: System
@@ -28,7 +18,7 @@ metadata:
     - ecommerce
 spec:
   owner: EP_ProductCatalogue_Team
-  domain: marketing
+  domain: biz-platforms
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
 # apiVersion: backstage.io/v1alpha1
@@ -85,12 +75,40 @@ kind: Product
 metadata:
   name: test-product
   title: My Product
-  # annotations:
-  #   # this could also be `url:<url>` if the documentation isn't in the same location
-  #   backstage.io/techdocs-ref: dir:.
+  description: |
+    Capability Product Catalog в Enablement Platform - создание спецификаций 
+    с базовыми характеристиками продукта для дальнейшей, персонализации, продажи и обслуживания на ЕР  
+  annotations:
+    mts.ru/ppinfo: id:BI_2844
+    mts.ru/oracle: code:ENPL
+  links:
+    - url: https://confluence.mts.ru/pages/viewpage.action?pageId=378648201
+      title: Confluence
+      icon: dashboard
 spec:
   type: internal
-  description: This is an example Product
+  lifecycle: experimental 
+  owner: biz-platforms-team
+
+---
+apiVersion: mts.ru/v1alpha1
+kind: Product
+metadata:
+  name: test-product-2
+  title: My Product 2
+  description: |
+    Capability Product Catalog в Enablement Platform - создание спецификаций 
+    с базовыми характеристиками продукта для дальнейшей, персонализации, продажи и обслуживания на ЕР  
+  annotations:
+    mts.ru/ppinfo: id:BI_2844
+    mts.ru/oracle: code:ENPL
+  links:
+    - url: https://confluence.mts.ru/pages/viewpage.action?pageId=378648201
+      title: Confluence
+      icon: dashboard
+spec:
+  type: internal
+  lifecycle: experimental
   owner: EP_ProductCatalogue_Team
 
 # ---

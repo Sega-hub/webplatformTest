@@ -1,3 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: biz-platforms
+  title: 
+  description: Кластер разработки бизнес платформ
+spec:
+  owner: biz-platforms-team
+  type: cluster
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-user
 apiVersion: backstage.io/v1alpha1
@@ -12,6 +21,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
   name: EP_ProductCatalogue_Team
+  title: EP Product Catalog Team
 spec:
   type: team
   displayName: EP Product Catalogue Team
@@ -23,8 +33,9 @@ apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
   name: biz-platforms-team
+  title: ИТ-кластер "Бизнес платформы"
 spec:
-  type: team
+  type: it-cluster
   displayName: ИТ-кластер "Бизнес платформы"
   email: biz-platforms-team@mts.ru
   children: []

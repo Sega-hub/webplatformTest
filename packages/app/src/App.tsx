@@ -44,8 +44,8 @@ import { UnifiedThemeProvider} from '@backstage/theme';
 
 import { ExplorePage } from '@backstage-community/plugin-explore';
 
-import { HomepageCompositionRoot } from '@backstage/plugin-home';
-import { HomePage } from './components/home/HomePage';
+// import { HomepageCompositionRoot } from '@backstage/plugin-home';
+// import { HomePage } from './components/home/HomePage';
 
 
 const app = createApp({

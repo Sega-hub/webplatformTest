@@ -7,7 +7,7 @@ import React from 'react';
 export const ExplorePage = () => {
     return (
       <ExploreLayout
-        title="Explore the ACME corp ecosystem"
+        title="Explore MTS Ecosystem"
         subtitle="Browse our ecosystem"
       >
         <ExploreLayout.Route path="domains" title="Domains">

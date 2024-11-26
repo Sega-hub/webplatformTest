@@ -12,7 +12,7 @@ import {
    */
   export interface ProductEntityV1alpha1 extends Entity {
     /**
-     * The apiVersion string of the TaskSpec.
+     * The apiVersion string of the ProductEntity.
      */
     apiVersion: 'mts.ru/v1alpha1';
     /**
@@ -20,18 +20,18 @@ import {
      */
     kind: 'Product';
     /**
-     * The specification of the Template Entity
+     * The specification of the Product Entity
      */
     spec: {
       /**
-       * The type that the Template will create. For example service, website or library.
+       * The type that the Product will create. For example 'internal'.
        */
-      type: string;
+      type?: string;
 
       /**
-       * The owner entityRef of the TemplateEntity
+       * The owner entityRef of the Product Entity
        */
-      owner?: string;
+      owner: string;
     };
   }
   
