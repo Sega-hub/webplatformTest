@@ -24,6 +24,7 @@ import { UserSettingsPage } from '@backstage/plugin-user-settings';
 import { apis } from './apis';
 import { entityPage } from './components/catalog/EntityPage';
 import { searchPage } from './components/search/SearchPage';
+import { CustomCatalogPage} from './components/catalog/CustomCatalogIndex'
 import { Root } from './components/Root';
 
 import {
@@ -44,12 +45,19 @@ import { UnifiedThemeProvider} from '@backstage/theme';
 
 import { ExplorePage } from '@backstage-community/plugin-explore';
 
+import { scaffolderTranslations } from './translations/scaffolder';
+
+
 // import { HomepageCompositionRoot } from '@backstage/plugin-home';
 // import { HomePage } from './components/home/HomePage';
 
 
 const app = createApp({
   apis,
+  __experimentalTranslations: {
+     availableLanguages: ['en', 'ru'],
+     resources: [scaffolderTranslations],
+  },
   bindRoutes({ bind }) {
     bind(catalogPlugin.externalRoutes, {
       createComponent: scaffolderPlugin.routes.root,
@@ -87,7 +95,10 @@ const routes = (
     {/* <Route path="/" element={<HomepageCompositionRoot />}>
       {HomePage}
     </Route>; */}
-    <Route path="/catalog" element={<CatalogIndexPage />} />
+    {/* <Route path="/catalog" element={<CatalogIndexPage />} /> */}
+    <Route path="/catalog" element={<CatalogIndexPage />}>
+      <CustomCatalogPage/>
+    </Route>
     <Route
       path="/catalog/:namespace/:kind/:name"
       element={<CatalogEntityPage />}
@@ -103,19 +114,25 @@ const routes = (
         <ReportIssue />
       </TechDocsAddons>
     </Route>
-    <Route path="/create" element={<ScaffolderPage 
-     groups={[
-      {
-        title: "Cloud Resources",
-        filter: entity =>
-          entity?.metadata?.tags?.includes('ocean') ?? false,
-      },
-      {
-        title: "Product Factory Resources",
-        filter: entity =>
-          entity?.metadata?.tags?.includes('pf') ?? false,
-      },
-    ]}/>} />
+    <Route path="/create" element={
+      <ScaffolderPage 
+        templateFilter={entity =>
+         entity?.metadata?.tags?.includes('internal') ?? true
+        } 
+        // groups={[
+        //   {
+        //     title: "Cloud Resources",
+        //     filter: entity =>
+        //       entity?.metadata?.tags?.includes('ocean') ?? false,
+        //   },
+        //   {
+        //     title: "Product Factory Resources",
+        //     filter: entity =>
+        //       entity?.metadata?.tags?.includes('pf') ?? false,
+        //   }
+          
+        // ]}
+        />} />
     <Route path="/api-docs" element={<ApiExplorerPage />} />
     <Route
       path="/catalog-import"

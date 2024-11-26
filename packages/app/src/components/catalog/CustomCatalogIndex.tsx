@@ -1,0 +1,59 @@
+import {
+    PageWithHeader,
+    Content,
+    ContentHeader,
+    CreateButton,
+    SupportButton,
+  } from '@backstage/core-components';
+  import { useApi, configApiRef } from '@backstage/core-plugin-api';
+  import { CatalogTable } from '@backstage/plugin-catalog';
+  import {
+    EntityListProvider,
+    CatalogFilterLayout,
+    EntityKindPicker,
+    EntityLifecyclePicker,
+    EntityNamespacePicker,
+    EntityOwnerPicker,
+    EntityProcessingStatusPicker,
+    EntityTagPicker,
+    EntityTypePicker,
+    UserListPicker,
+  } from '@backstage/plugin-catalog-react';
+  import React from 'react';
+  
+  export const CustomCatalogPage = () => {
+    const orgName =
+      useApi(configApiRef).getOptionalString('organization.name') ?? 'MTS'; 
+
+    const addProductLink = () => '/create/templates/default/add-product';
+    return (
+      <PageWithHeader title={orgName} themeId="myTheme">
+        <Content>
+          <ContentHeader title="">
+            <CreateButton
+              title="ADD PRODUCT"
+              to={addProductLink?.()}
+            />
+            <SupportButton>All your software catalog entities</SupportButton>
+          </ContentHeader>
+          <EntityListProvider pagination>
+            <CatalogFilterLayout>
+              <CatalogFilterLayout.Filters>
+                <EntityKindPicker />
+                <EntityTypePicker />
+                <UserListPicker />
+                <EntityOwnerPicker />
+                <EntityLifecyclePicker />
+                <EntityTagPicker />
+                <EntityProcessingStatusPicker />
+                <EntityNamespacePicker />
+              </CatalogFilterLayout.Filters>
+              <CatalogFilterLayout.Content>
+                <CatalogTable />
+              </CatalogFilterLayout.Content>
+            </CatalogFilterLayout>
+          </EntityListProvider>
+        </Content>
+      </PageWithHeader>
+    );
+  };

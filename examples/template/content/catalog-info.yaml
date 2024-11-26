@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
-kind: Product
+kind: Component
 metadata:
   name: ${{ values.name | dump }}
 spec:
-  type: internal
+  type: service
   owner: user:guest
   lifecycle: experimental

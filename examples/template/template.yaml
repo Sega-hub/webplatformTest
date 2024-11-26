@@ -4,7 +4,9 @@ kind: Template
 metadata:
   name: example-nodejs-template
   title: Example Node.js Template
-  description: An example template for the scaffolder that creates a simple Node.js service
+  description: An example template for the scaffolder that creates a simple Node.js services
+  tags:
+    - internal
 spec:
   owner: user:guest
   type: service
@@ -89,7 +91,7 @@ metadata:
   title: Create S3 bucket on Ocean Cloud
   description: An example of Ocean integration
   tags: 
-    - ocean
+    - internal
 spec:
   owner: user:guest
   type: resource
@@ -162,7 +164,7 @@ metadata:
   title: Create new Project in Product Factory
   description: An example of integration with Product Factory
   tags: 
-    - pf
+    - internal
 spec:
   owner: user:guest
   type: tools
@@ -230,9 +232,11 @@ apiVersion: scaffolder.backstage.io/v1beta3
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-template
 kind: Template
 metadata:
-  name: product-onboarding
-  title: Onboard new Product on the platform
-  description: This wizard helps to onboard new product on the platform
+  name: add-product
+  title: Мастер добавления продукта на платформу The Platform
+  description: Мастер позволяет быстро добавить данные о продукте на платформу The Platform
+  tags:
+    - experimental
 spec:
   owner: user:guest
   type: product
@@ -240,7 +244,7 @@ spec:
   # These parameters are used to generate the input form in the frontend, and are
   # used to gather input data for the execution of the template.
   parameters:
-  - title: Fill in some details
+  - title: Данные по продукту
     properties:
         name:
           title: Код продукта
@@ -258,12 +262,12 @@ spec:
           description: Команда продукта
           ui:field: EntityPicker
           ui:options:
-            allowedKinds:
-              - Group
-            defaultKind: Group
+            catalogFilter:
+              - kind: Group
+                spec.type: team
   steps:
     - id: register
-      name: Register
+      name: Добавить
       action: catalog:register
       input:
         repoContentsUrl: ${{ name }}
