@@ -3,8 +3,8 @@ import {
     createUnifiedTheme,
     genPageTheme,
     palettes,
-    shapes
-  
+    shapes,
+    defaultTypography
   } from '@backstage/theme';
   
   export const myTheme = createUnifiedTheme({
@@ -30,7 +30,7 @@ import {
           main: '#485e30',
         },
         background: {
-          default: '#fff',
+          default: '#F2F3F7',
           paper: '#fff',
         },
         banner: {
@@ -50,24 +50,75 @@ import {
         },
       },
     }),
-    fontFamily: 'MTS Text',
-    // components: {
-    //   MuiButton: {
-    //     styleOverrides: {
-    //       root: {
-    //         borderRadius: 3,
-    //         textTransform: 'none',
-    //       },
-    //       contained: {
-    //         boxShadow: 'none',
-    //         backgroundColor: '#ff0032'
-    //       },
-    //     },
-    //   },
-    // },
+    typography: {
+      ...defaultTypography,
+      htmlFontSize: 18,
+      fontFamily: 'MTS Text',
+      h1: {
+        fontFamily: 'MTS Wide',
+        fontSize: 36,
+        fontWeight: 500,
+        marginBottom: 0,
+      },
+      h2: {
+        fontFamily: 'MTS Text',
+        fontSize: 32,
+        fontWeight: 500,
+        marginBottom: 0,
+      },
+    },
+    components: {
+      // BackstageHeader: {
+      //   styleOverrides: {
+      //     header: ({ theme }) => ({
+      //       width: 'auto',
+      //       margin: '20px',
+      //       boxShadow: 'none',
+      //       borderBottom: `4px solid ${theme.palette.primary.main}`,
+      //     }),
+      //   },
+      // },
+      // BackstageInfoCard: {
+      //   styleOverrides: {
+      //     header: ({ theme }) => ({
+      //       width: 'auto',
+      //       boxShadow: 'none'
+      //     }),
+      //   }
+      // },
+      BackstageSidebarItem: {
+        styleOverrides: {
+          root: {
+            height: 48,
+            textDecorationLine: 'none'
+          }
+        }
+      },
+      MuiButton: {  
+        styleOverrides: { 
+          root: {  
+            textTransform: 'none', // Remove uppercase text  
+          }, 
+          containedPrimary: {  
+            '&:hover': {  
+              backgroundColor: '#ff0032', // light blue on hover
+            },  
+            color: '#FFFFFF',  
+          },
+          colorSecondary: '#ff0032'
+        },  
+      },  
+    },
      /* below drives the header colors */
     pageTheme: {
-      home: genPageTheme({ colors: ['#343b58'], shape: shapes.wave }),
+      home: genPageTheme(
+        { 
+          colors: ['#343b58'], 
+          shape: shapes.wave,
+          options: {
+            fontColor: "#fff"
+        }
+        }),
       documentation: genPageTheme({
         colors: ['#8c4351', '#343b58'],
         shape: shapes.wave2,

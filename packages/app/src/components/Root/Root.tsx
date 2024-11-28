@@ -17,6 +17,8 @@ import {
   SidebarDivider,
   SidebarGroup,
   SidebarItem,
+  SidebarSubmenu,
+  SidebarSubmenuItem,
   SidebarPage,
   SidebarScrollWrapper,
   SidebarSpace,
@@ -25,9 +27,9 @@ import {
 } from '@backstage/core-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import { MyGroupsSidebarItem } from '@backstage/plugin-org';
-import GroupIcon from '@material-ui/icons/People';
-import LayersIcon from '@material-ui/icons/Layers';
+import CategoryIcon from '@material-ui/icons/Category';
+
+import { useApp } from '@backstage/core-plugin-api';
 
 const useSidebarLogoStyles = makeStyles({
   root: {
@@ -67,13 +69,36 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
       <SidebarDivider />
       <SidebarGroup label="Menu" icon={<MenuIcon />}>
         {/* Global nav, not org-specific */}
-        <SidebarItem icon={LayersIcon} to="explore" text="Explore" />
-        <SidebarItem icon={HomeIcon} to="catalog" text="Home" />
-        <MyGroupsSidebarItem
-          singularTitle="My Group"
-          pluralTitle="My Groups"
-          icon={GroupIcon}
-        />
+        <SidebarItem icon={HomeIcon} to="/" text="Home" />
+        <SidebarItem icon={CategoryIcon} to="catalog" text="Catalog">
+          <SidebarSubmenu title="Catalog">
+            <SidebarSubmenuItem
+              title="Products"
+              to="catalog?filters[kind]=product"
+              icon={useApp().getSystemIcon('dashboard')}
+            />
+            <SidebarSubmenuItem
+              title="Systems"
+              to="catalog?filters[kind]=system"
+              icon={useApp().getSystemIcon('kind:system')}
+            />
+            <SidebarSubmenuItem
+              title="Components"
+              to="catalog?filters[kind]=component"
+              icon={useApp().getSystemIcon('kind:component')}
+            />
+            <SidebarSubmenuItem
+              title="APIs"
+              to="catalog?filters[kind]=api"
+              icon={useApp().getSystemIcon('kind:api')}
+            />
+            <SidebarSubmenuItem
+              title="Resources"
+              to="catalog?filters[kind]=resource"
+              icon={useApp().getSystemIcon('kind:resource')}
+            />
+        </SidebarSubmenu>
+        </SidebarItem>
         <SidebarItem icon={ExtensionIcon} to="api-docs" text="APIs" />
         <SidebarItem icon={LibraryBooks} to="docs" text="Docs" />
         <SidebarItem icon={CreateComponentIcon} to="create" text="Create..." />

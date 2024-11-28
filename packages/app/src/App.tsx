@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { apiDocsPlugin, ApiExplorerPage } from '@backstage/plugin-api-docs';
 import {
   CatalogEntityPage,
@@ -43,13 +43,11 @@ import LightIcon from '@material-ui/icons/WbSunny';
 import { myTheme } from './themes/mts-theme';
 import { UnifiedThemeProvider} from '@backstage/theme';
 
-import { ExplorePage } from '@backstage-community/plugin-explore';
-
 import { scaffolderTranslations } from './translations/scaffolder';
 
 
-// import { HomepageCompositionRoot } from '@backstage/plugin-home';
-// import { HomePage } from './components/home/HomePage';
+import { HomepageCompositionRoot } from '@backstage/plugin-home';
+import { HomePage } from './components/home/HomePage';
 
 
 const app = createApp({
@@ -91,11 +89,9 @@ const app = createApp({
 
 const routes = (
   <FlatRoutes>
-    <Route path="/" element={<Navigate to="explore" />} /> 
-    {/* <Route path="/" element={<HomepageCompositionRoot />}>
-      {HomePage}
-    </Route>; */}
-    {/* <Route path="/catalog" element={<CatalogIndexPage />} /> */}
+    <Route path="/" element={<HomepageCompositionRoot />}>
+      <HomePage/>
+    </Route>;
     <Route path="/catalog" element={<CatalogIndexPage />}>
       <CustomCatalogPage/>
     </Route>
@@ -119,19 +115,6 @@ const routes = (
         templateFilter={entity =>
          entity?.metadata?.tags?.includes('internal') ?? true
         } 
-        // groups={[
-        //   {
-        //     title: "Cloud Resources",
-        //     filter: entity =>
-        //       entity?.metadata?.tags?.includes('ocean') ?? false,
-        //   },
-        //   {
-        //     title: "Product Factory Resources",
-        //     filter: entity =>
-        //       entity?.metadata?.tags?.includes('pf') ?? false,
-        //   }
-          
-        // ]}
         />} />
     <Route path="/api-docs" element={<ApiExplorerPage />} />
     <Route
@@ -147,7 +130,6 @@ const routes = (
     </Route>
     <Route path="/settings" element={<UserSettingsPage />} />
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
-    <Route path="/explore" element={<ExplorePage />} />
   </FlatRoutes>
 );
 
