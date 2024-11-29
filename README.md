@@ -1,6 +1,5 @@
-# [Backstage](https://backstage.io)
-
-This is your newly scaffolded Backstage App, Good Luck!
+# Quick Start
+This is newly scaffolded The Platform Portal.
 
 To start the app, run:
 
