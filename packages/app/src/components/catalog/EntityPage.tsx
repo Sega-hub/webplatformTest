@@ -51,6 +51,12 @@ import {
   RELATION_PROVIDES_API,
 } from '@backstage/catalog-model';
 
+import {
+  EntityPrometheusContent,
+  EntityPrometheusAlertCard,  
+  EntityPrometheusGraphCard,
+} from '@roadiehq/backstage-plugin-prometheus';
+
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
 
@@ -142,6 +148,12 @@ const overviewContent = (
     <Grid item md={8} xs={12}>
       <EntityHasSubcomponentsCard variant="gridItem" />
     </Grid>
+    <Grid item md={8}>
+      <EntityPrometheusAlertCard />
+    </Grid>
+    <Grid item md={6}>
+      <EntityPrometheusGraphCard />
+    </Grid>
   </Grid>
 );
 
@@ -187,6 +199,9 @@ const serviceEntityPage = (
 
     <EntityLayout.Route path="/docs" title="Docs">
       {techdocsContent}
+    </EntityLayout.Route>
+    <EntityLayout.Route path="/prometheus" title="Usage Metrics">
+      <EntityPrometheusContent />
     </EntityLayout.Route>
   </EntityLayout>
 );

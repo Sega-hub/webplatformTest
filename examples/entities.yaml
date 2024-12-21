@@ -49,6 +49,7 @@ metadata:
     - portal
 spec:
   owner: the-platform-core
+  lifecycle: production
   type: website
   system: the-platform
 ---
@@ -77,6 +78,23 @@ spec:
   type: vm
   system: the-platform
   partOf: ocean
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: resource-service
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    prometheus.io/rule: last_over_time(intpl_api_subscriptions_total[30m])
+  description: 'Тестовый сервис'
+spec:
+  type: service
+  owner: group:the-platform-core
+  lifecycle: production
+  profile:
+    displayName: "Тестовый сервис"
+  system: the-platform
+
 
 ---
 apiVersion: backstage.io/v1alpha1

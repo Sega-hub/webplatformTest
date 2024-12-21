@@ -44,6 +44,16 @@ integrations:
     #   token: ${GHE_TOKEN}
 
 proxy:
+  '/prometheus/api':
+    # url to the api and path of your hosted prometheus instance
+    target: http://localhost:8428/api/v1/
+    changeOrigin: true
+    secure: false
+    credentials: dangerously-allow-unauthenticated
+prometheus:
+    proxyPath: /prometheus/api
+    # headers:
+    #   Authorization: ${YOUR_AUTH_TOKEN_IF_PROMETHEUS_IS_SECURED}
   ### Example for how to add a proxy endpoint for the frontend.
   ### A typical reason to do this is to handle HTTPS and CORS for internal services.
   # endpoints:
