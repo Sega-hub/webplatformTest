@@ -30,14 +30,13 @@ import { Root } from './components/Root';
 import {
   AlertDisplay,
   OAuthRequestDialog,
-  SignInPage,
+  SignInPage
 } from '@backstage/core-components';
 import { createApp } from '@backstage/app-defaults';
 import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
 import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
-
 
 import LightIcon from '@material-ui/icons/WbSunny';
 import { myTheme } from './themes/mts-theme';
@@ -49,6 +48,7 @@ import { scaffolderTranslations } from './translations/scaffolder';
 import { HomepageCompositionRoot } from '@backstage/plugin-home';
 import { HomePage } from './components/home/HomePage';
 
+import { oidcAuthApiRef } from './apis';
 
 const app = createApp({
   apis,
@@ -83,7 +83,21 @@ const app = createApp({
     ),
   }],
   components: {
-    SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
+    // SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
+    SignInPage: props => (
+      <SignInPage
+        {...props}
+        auto
+        providers={
+          [{
+            id: 'iam-oidc',
+            title: 'Keycloak SSO',
+            message: 'Sign in with Keycloak SSO',
+            apiRef: oidcAuthApiRef,
+          }]
+        }
+      />
+    ),
   },
 });
 

@@ -1,8 +1,8 @@
-apiVersion: backstage.io/v1alpha1
+apiVersion: mts.ru/v1alpha1
 kind: Product
 metadata:
   name: ${{ values.name | dump }}
 spec:
   type: internal
-  owner: group:EP_ProductCatalogue_Team
+  owner: ${{ values.owner }}
   lifecycle: experimental

@@ -245,18 +245,21 @@ spec:
   # used to gather input data for the execution of the template.
   parameters:
   - title: Данные по продукту
+    required:
+        - name
+        - owner
     properties:
         name:
           title: Код продукта
           type: string
           description: Код продукта PPInfo
           # ui:field: EntityNamePicker
-          # ui:autofocus: true
+          ui:autofocus: true
         description:
           title: Описание продукта
           type: string
           description: Краткое описание
-        system:
+        owner:
           title: Владелец
           type: string
           description: Команда продукта
@@ -266,9 +269,19 @@ spec:
               - kind: Group
                 spec.type: team
   steps:
-    - id: register
+    - action: catalog:write
+      id: add-product-info
       name: Добавить
-      action: catalog:register
       input:
-        repoContentsUrl: ${{ name }}
-        catalogInfoPath: '/import-product.yaml'
+        entity:
+          apiVersion: mts.ru/v1alpha1
+          kind: Product
+          metadata:
+            name: ${{ name }}
+            annotations: 
+              backstage.io/managed-by-location: bootstrap:bootstrap
+              backstage.io/managed-by-origin-location: bootstrap:bootstrap
+          spec:
+            type: internal
+            lifecycle: experimental
+            owner: {{ owner }}

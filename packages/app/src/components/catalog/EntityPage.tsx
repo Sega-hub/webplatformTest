@@ -321,7 +321,7 @@ const apiPage = (
   </EntityLayout>
 );
 
-const customEntityFilterKind = ['Component', 'Product'];
+const customEntityFilterKind = ['Resource'];
 
 const userPage = (
   <EntityLayout>

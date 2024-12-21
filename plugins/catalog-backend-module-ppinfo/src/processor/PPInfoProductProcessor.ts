@@ -14,10 +14,11 @@ import {
   import {
     ProductEntityV1alpha1,
     productEntityV1alpha1Validator,
+    isProductEntityV1alpha1
   } from '@internal/backstage-plugin-ppinfo-common';
   
   /**
-   * Adds support for scaffolder specific entity kinds to the catalog.
+   * Adds support for PPInfo specific entity kinds to the catalog.
    *
    * @public
    */
@@ -45,12 +46,12 @@ import {
     ): Promise<Entity> {
       const selfRef = getCompoundEntityRef(entity);
   
-      if (
-        entity.apiVersion === 'mts.ru/v1alpha1' &&
-        entity.kind === 'Product'
-      ) {
+      if (isProductEntityV1alpha1(entity))
+      //   entity.apiVersion === 'mts.ru/v1alpha1' &&
+      //   entity.kind === 'Product'
+      // ) {
+       { 
         const template = entity as ProductEntityV1alpha1;
-  
         const target = template.spec.owner;
         if (target) {
           const targetRef = parseEntityRef(target, {

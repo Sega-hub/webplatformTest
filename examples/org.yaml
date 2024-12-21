@@ -2,22 +2,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  name: guest
+  name: dktabolich
 spec:
-  memberOf: [EP_ProductCatalogue_Team]
----
-# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-group
-apiVersion: backstage.io/v1alpha1
-kind: Group
-metadata:
-  name: EP_ProductCatalogue_Team
-  title: EP Product Catalog Team
-spec:
-  type: team
-  displayName: EP Product Catalogue Team
-  email: EP_ProductCatalogue_Team@mts.ru
-  children: []
-
+  memberOf: [the-platform-core]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Group
@@ -29,3 +16,49 @@ spec:
   displayName: ИТ-кластер "Бизнес платформы"
   email: biz-platforms-team@mts.ru
   children: []
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: the-platform-core
+  title: The Platform Core
+spec:
+  type: team
+  displayName: The Platform Core Team
+  email: the-platform-core@mts.ru
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: ocean-core
+  title: Ocean Core Team
+spec:
+  type: team
+  displayName: Ocean Cloud Core Team
+  email: ocean-core@mts.ru
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: rnd-core
+  title: R&D Core Team
+spec:
+  type: team
+  displayName: R&D Core Team
+  email: rnd@mts.ru
+  children: []
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: tech-gov
+  title: TechGov
+spec:
+  type: team
+  displayName: TechGov Team
+  email: tech-gov@mts.ru
+  children: [the-platform-core, rnd-core]

@@ -51,7 +51,7 @@ import {
   };
   
   /**
-   * Typeguard for filtering entities and ensuring v1beta3 entities
+   * Typeguard for filtering entities and ensuring v1alpha1 entities
    * @public
    */
   export const isProductEntityV1alpha1 = (

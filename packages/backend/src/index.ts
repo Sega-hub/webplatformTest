@@ -60,4 +60,6 @@ backend.add(import('@backstage-community/plugin-tech-insights-backend'));
 backend.add(import('@backstage-community/plugin-tech-insights-backend-module-jsonfc'));
 
 backend.add(import('@internal/backstage-plugin-catalog-backend-module-ppinfo'));
+
+backend.add(import('@internal/backstage-plugin-auth-backend-module-oidc'));
 backend.start();

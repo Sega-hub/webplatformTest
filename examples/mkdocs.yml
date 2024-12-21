@@ -2,8 +2,5 @@ site_name: Руководство для разработчика
 nav:
   - Обзор: index.md
   - Ключевые возможности: 'overview/platform.md'
-  - Ключевые сервисы: 
-    - SBS.454 - Сервис управления продуктовым каталогом: 'overview/services.md'
-    - SBS.455 - Сервис управления продуктовым каталогом: 'overview/services.md'
 plugins:
   - techdocs-core
