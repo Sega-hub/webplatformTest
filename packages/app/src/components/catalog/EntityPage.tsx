@@ -148,12 +148,13 @@ const overviewContent = (
     <Grid item md={8} xs={12}>
       <EntityHasSubcomponentsCard variant="gridItem" />
     </Grid>
-    <Grid item md={8}>
+
+    {/* <Grid item md={8}>
       <EntityPrometheusAlertCard />
     </Grid>
     <Grid item md={6}>
       <EntityPrometheusGraphCard />
-    </Grid>
+    </Grid> */}
   </Grid>
 );
 
@@ -202,6 +203,46 @@ const serviceEntityPage = (
     </EntityLayout.Route>
     <EntityLayout.Route path="/prometheus" title="Usage Metrics">
       <EntityPrometheusContent />
+    </EntityLayout.Route>
+    
+  </EntityLayout>
+);
+
+const llmOpsOverviewContent = (
+  <Grid container spacing={3} alignItems="stretch">
+    {entityWarningContent}
+    <Grid item md={6}>
+      <EntityAboutCard variant="gridItem" />
+    </Grid>
+    <Grid item md={6} xs={12}>
+      <EntityCatalogGraphCard variant="gridItem" height={400} />
+    </Grid>
+    <Grid item md={4} xs={12}>
+      <EntityLinksCard />
+    </Grid>
+  </Grid>
+);
+
+const modelServerEntityPage = (
+  <EntityLayout>
+    <EntityLayout.Route path="/" title="Overview">
+      {llmOpsOverviewContent}
+    </EntityLayout.Route>
+
+    <EntityLayout.Route path="/dependencies" title="Models">
+      <Grid>
+          <EntityDependsOnResourcesCard variant="gridItem" title='Available Models'/>
+      </Grid>
+    </EntityLayout.Route>
+
+    <EntityLayout.Route path="/api" title="API">
+      <Grid alignItems="stretch">
+        <EntityProvidedApisCard />
+      </Grid>
+    </EntityLayout.Route>
+
+    <EntityLayout.Route path="/docs" title="Docs">
+      {techdocsContent}
     </EntityLayout.Route>
   </EntityLayout>
 );
@@ -291,6 +332,10 @@ const componentPage = (
   <EntitySwitch>
     <EntitySwitch.Case if={isComponentType('service')}>
       {serviceEntityPage}
+    </EntitySwitch.Case>
+
+    <EntitySwitch.Case if={isComponentType('model-server')}>
+      {modelServerEntityPage}
     </EntitySwitch.Case>
 
     <EntitySwitch.Case if={isComponentType('website')}>

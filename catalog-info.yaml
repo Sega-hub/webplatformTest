@@ -1,13 +1,40 @@
+apiVersion: mts.ru/v1alpha1
+kind: Product
+metadata:
+  name: the-platform
+  title: The Platform
+spec:
+  type: internal
+  lifecycle: experimental
+  owner: the-platform-core
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: the-platform
+  title: The Platform
+  annotations:
+      backstage.io/techdocs-ref: dir:.
+  links:
+    - url: https://confluence.mts.ru/display/PLAT/THE+PLATFORM
+      title: Confluence Space
+      icon: dashboard
+      type: kb-space
+  tags:
+    - platform
+    - core
+spec:
+  owner: group:the-platform-core
+---
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: the-platform-portal
-  description: An example of a Backstage application.
-  # Example for optional annotations
-  # annotations:
-  #   github.com/project-slug: backstage/backstage
-  #   backstage.io/techdocs-ref: dir:.
+  title: The Platform Portal
+  tags:
+    - portal
 spec:
-  type: website
-  owner: john@example.com
+  owner: group:the-platform-core
   lifecycle: experimental
+  type: website
+  system: the-platform
