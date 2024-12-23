@@ -31,6 +31,8 @@ kind: Component
 metadata:
   name: the-platform-portal
   title: The Platform Portal
+  annotations:
+    backstage.io/techdocs-ref: dir:.
   tags:
     - portal
 spec:

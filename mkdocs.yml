@@ -1,6 +1,4 @@
-site_name: Руководство для разработчика
-nav:
-  - Обзор: index.md
-  - Ключевые возможности: 'overview/platform.md'
+site_name: Documentation Site
+docs_dir: docs
 plugins:
   - techdocs-core
