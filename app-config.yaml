@@ -34,7 +34,8 @@ backend:
 
 integrations:
   gitlab:
-    - host: https://gitlab.services.mts.ru/
+    - host: gitlab.services.mts.ru
+      apiBaseUrl: https://gitlab.services.mts.ru/api/v4
       token: cPQJzEMVygWjrkJLpg5G
 
 proxy:
