@@ -32,7 +32,7 @@ metadata:
   name: the-platform-portal
   title: The Platform Portal
   annotations:
-    backstage.io/techdocs-ref: dir:.
+    backstage.io/techdocs-ref: dir:portal
   tags:
     - portal
 spec:
