@@ -1,0 +1,8 @@
+POST http://localhost:8428/api/v1/import -d
+content-type: application/json
+
+{
+    "metric":{"__name__":"intpl_api_subscriptions_total"},
+    "values":[0,1,2],
+    "timestamps":[1734986799000, 1734989799000, 1734989805000]
+}
