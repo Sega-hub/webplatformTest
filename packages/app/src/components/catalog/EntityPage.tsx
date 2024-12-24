@@ -142,13 +142,16 @@ const overviewContent = (
       <EntityCatalogGraphCard variant="gridItem" height={400} />
     </Grid>
 
-    <Grid item md={4} xs={12}>
+    {/* <Grid item md={4} xs={12}>
       <EntityLinksCard />
-    </Grid>
-    <Grid item md={8} xs={12}>
+    </Grid> */}
+    <Grid item md={12} xs={12}>
+      <EntityPrometheusGraphCard graphType='area' title='Usage'/>
+    </Grid> 
+    {/* <Grid item md={8} xs={12}>
       <EntityHasSubcomponentsCard variant="gridItem" />
-    </Grid>
-
+    </Grid> */}
+    
     {/* <Grid item md={8}>
       <EntityPrometheusAlertCard />
     </Grid>
@@ -202,7 +205,7 @@ const serviceEntityPage = (
       {techdocsContent}
     </EntityLayout.Route>
     <EntityLayout.Route path="/prometheus" title="Usage Metrics">
-      <EntityPrometheusContent />
+      <EntityPrometheusContent graphType='area' />
     </EntityLayout.Route>
     
   </EntityLayout>
