@@ -35,8 +35,8 @@ backend:
 integrations:
   gitlab:
     - host: gitlab.services.mts.ru
-      apiBaseUrl: https://gitlab.services.mts.ru/api/v4
-      token: cPQJzEMVygWjrkJLpg5G
+      apiBaseUrl: ${GITLAB_API_BASE_URL}
+      token: ${GITLAB_AUTH_TOKEN}
 
 proxy:
   '/prometheus/api':
@@ -77,8 +77,8 @@ auth:
     iam-oidc:
       development:
         metadataUrl: http://127.0.0.1:8080/realms/master/.well-known/openid-configuration
-        clientId: portal
-        clientSecret: 0gqu5FBDMVNbJuWVrjWIQtyuh7oioisI
+        clientId:  ${OIDC_AUTH_CLIENT_ID}
+        clientSecret: ${OIDC_AUTH_CLIENT_SECRET} 
         prompt: auto
         
     # See https://backstage.io/docs/auth/guest/provider

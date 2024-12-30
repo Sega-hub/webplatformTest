@@ -1,8 +1,0 @@
-site_name: LLMOps для разработчика
-nav:
-  - Обзор: index.md
-  - Доступные модели:
-    - Bolt new: 'models/bolt-new.md'
-    - MTS Anya: 'models/mts-anya.md'
-plugins:
-  - techdocs-core
