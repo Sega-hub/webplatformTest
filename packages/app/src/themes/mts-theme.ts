@@ -6,7 +6,30 @@ import {
     shapes,
     defaultTypography
   } from '@backstage/theme';
+
+import MTSTextFont from '../assets/fonts/MTSText-Regular.woff2';
+import MTSWideFont from '../assets/fonts/MTSWide-Medium.woff2';
   
+
+  const mtsTextFont = {
+    fontFamily: 'MTS Text',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
+    fontWeight: 300,
+    src: `
+      local('MTS Text'),
+      url(${MTSTextFont}) format('woff2'),
+    `,
+  };
+
+  const mtsWideFont = {
+    fontFamily: 'MTS Wide',
+    src: `
+      local('MTS Wide'),
+      url(${MTSWideFont}) format('woff2'),
+    `,
+  };
+
   export const myTheme = createUnifiedTheme({
     ...createBaseThemeOptions({
       palette: {
@@ -68,24 +91,11 @@ import {
       },
     },
     components: {
-      // BackstageHeader: {
-      //   styleOverrides: {
-      //     header: ({ theme }) => ({
-      //       width: 'auto',
-      //       margin: '20px',
-      //       boxShadow: 'none',
-      //       borderBottom: `4px solid ${theme.palette.primary.main}`,
-      //     }),
-      //   },
-      // },
-      // BackstageInfoCard: {
-      //   styleOverrides: {
-      //     header: ({ theme }) => ({
-      //       width: 'auto',
-      //       boxShadow: 'none'
-      //     }),
-      //   }
-      // },
+      MuiCssBaseline: {
+        styleOverrides: {
+          '@font-face': [mtsTextFont, mtsWideFont],
+        },
+      },
       BackstageSidebarItem: {
         styleOverrides: {
           root: {

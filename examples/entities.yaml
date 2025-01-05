@@ -3,8 +3,6 @@ kind: System
 metadata:
   name: ocean
   title: Ocean
-  annotations:
-      backstage.io/techdocs-ref: dir:.
   tags:
     - platform
     - core
@@ -42,7 +40,6 @@ kind: Component
 metadata:
   name: resource-service
   annotations:
-    backstage.io/techdocs-ref: dir:.
     prometheus.io/rule: last_over_time(intpl_api_subscriptions_total[30m])
   description: 'Тестовый сервис'
 spec:
