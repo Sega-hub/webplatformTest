@@ -32,6 +32,12 @@ import {
        * The owner entityRef of the Product Entity
        */
       owner: string;
+
+       /**
+       * The code entityRef of the Product Entity
+       */
+       code: string;
+
     };
   }
   

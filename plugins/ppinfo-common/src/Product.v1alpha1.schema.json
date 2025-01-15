@@ -20,6 +20,7 @@
       },
       "spec": {
         "owner": "team-a",
+        "code": "BI_3535",
         "type": "internal"
       }
     }
@@ -40,7 +41,7 @@
         },
         "spec": {
           "type": "object",
-          "required": ["owner"],
+          "required": ["owner", "code"],
           "properties": {
             "type": {
               "type": "string",
@@ -51,6 +52,11 @@
             "owner": {
               "type": "string",
               "description": "The user (or group) owner of the product",
+              "minLength": 1
+            },
+            "code": {
+              "type": "string",
+              "description": "The product code as per PLM (PPInfo)",
               "minLength": 1
             }
           }

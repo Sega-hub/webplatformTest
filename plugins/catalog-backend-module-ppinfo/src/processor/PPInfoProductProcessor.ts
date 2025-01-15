@@ -47,9 +47,6 @@ import {
       const selfRef = getCompoundEntityRef(entity);
   
       if (isProductEntityV1alpha1(entity))
-      //   entity.apiVersion === 'mts.ru/v1alpha1' &&
-      //   entity.kind === 'Product'
-      // ) {
        { 
         const template = entity as ProductEntityV1alpha1;
         const target = template.spec.owner;
