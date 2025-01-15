@@ -35,8 +35,60 @@ metadata:
     backstage.io/techdocs-ref: dir:portal
   tags:
     - portal
+    - idp
 spec:
   owner: group:the-platform-core
   lifecycle: experimental
   type: website
   system: the-platform
+
+--- 
+
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: the-platform-iam
+  title: The Platform IAM (Identity and Access Management)
+  annotations:
+    backstage.io/techdocs-ref: dir:iam
+  tags:
+    - iam
+    - security
+    - permissions
+    - access
+spec:
+  owner: group:the-platform-core
+  lifecycle: experimental
+  type: core-module
+  system: the-platform
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: auth-backend-module-oidc
+  title: Custom plugin for OAuth (OIDC) implementation
+  tags:
+    - iam
+    - security
+    - oauth
+    - oidc
+spec:
+  owner: group:the-platform-core
+  lifecycle: experimental
+  type: plugin
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: catalog-backend-module-ppinfo
+  title: Custom entity processor for Product entity (kind:Product)
+  tags:
+    - core
+    - catalog
+spec:
+  owner: group:the-platform-core
+  lifecycle: experimental
+  type: plugin

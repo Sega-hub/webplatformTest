@@ -1,0 +1,8 @@
+site_name: Портал The Platform
+nav:
+  - Общее: index.md
+  - Руководство: usage.md
+  - Управление доступом и правами: iam.md
+
+plugins:
+  - techdocs-core
