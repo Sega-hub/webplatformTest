@@ -42,6 +42,8 @@ spec:
   lifecycle: experimental
   type: website
   system: the-platform
+  dependsOn:
+    - component:default/the-platform-iam
 
 --- 
 
