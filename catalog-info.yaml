@@ -8,6 +8,7 @@ spec:
   lifecycle: experimental
   owner: the-platform-core
   code: BI_3535
+
 ---
 apiVersion: backstage.io/v1alpha1
 kind: System
@@ -26,6 +27,7 @@ metadata:
     - core
 spec:
   owner: group:the-platform-core
+  type: platform
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -62,7 +64,7 @@ metadata:
 spec:
   owner: group:the-platform-core
   lifecycle: experimental
-  type: core-module
+  type: platform-core-module
   system: the-platform
 
 ---

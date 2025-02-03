@@ -1,0 +1,8 @@
+site_name: Управление доступом на платформе The Platform
+nav:
+  - Общая модель управления доступами: iam.md
+  - Управление ролями: roles.md
+  - Управление привилегиями: permissions.md
+
+plugins:
+  - techdocs-core
