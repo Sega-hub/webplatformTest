@@ -6,12 +6,15 @@
   "backstage": {
     "role": "frontend"
   },
+  "homepage": "https://Sega-hub.github.io/testMTS",
   "scripts": {
     "start": "backstage-cli package start",
     "build": "backstage-cli package build",
     "clean": "backstage-cli package clean",
     "test": "backstage-cli package test",
-    "lint": "backstage-cli package lint"
+    "lint": "backstage-cli package lint",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@backstage-community/plugin-tech-insights": "^0.3.39",
@@ -54,8 +57,10 @@
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.0.0",
+    "@types/gh-pages": "^6",
     "@types/react-dom": "*",
-    "cross-env": "^7.0.0"
+    "cross-env": "^7.0.0",
+    "gh-pages": "^6.3.0"
   },
   "browserslist": {
     "production": [

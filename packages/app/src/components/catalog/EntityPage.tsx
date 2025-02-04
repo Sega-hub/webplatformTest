@@ -14,7 +14,7 @@ import {
   EntityDependsOnResourcesCard,
   EntityHasComponentsCard,
   EntityHasResourcesCard,
-  EntityHasSubcomponentsCard,
+  // EntityHasSubcomponentsCard,
   EntityHasSystemsCard,
   EntityLayout,
   EntityLinksCard,
@@ -53,7 +53,7 @@ import {
 
 import {
   EntityPrometheusContent,
-  EntityPrometheusAlertCard,  
+  // EntityPrometheusAlertCard,  
   EntityPrometheusGraphCard,
 } from '@roadiehq/backstage-plugin-prometheus';
 

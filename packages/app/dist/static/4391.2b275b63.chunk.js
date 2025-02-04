@@ -1,0 +1,3 @@
+"use strict";(()=>{(self.webpackChunkapp=self.webpackChunkapp||[]).push([[4391],{34391:(P,l,t)=>{t.r(l),t.d(l,{PrometheusAlertEntityWrapper:()=>E,PrometheusAlertStatus:()=>n.P});var n=t(54317),a=t(14041),u=t(717),h=t(76928),e=t(30267);const E=({onRowClick:r})=>{const{entity:o}=(0,h.tN)(),m=(0,e.ec)(o);if(!m)return a.createElement(u.o,{annotation:e.QH,readMoreUrl:e.WG});const s=m?o.metadata.annotations[e.QH].split(","):[];return s.length>0&&s[0]==="all"?a.createElement(n.P,{alerts:"all",onRowClick:r}):a.createElement(n.P,{alerts:s,onRowClick:r})}}}]);})();
+
+//# sourceMappingURL=4391.2b275b63.chunk.js.map
