@@ -1,0 +1,1 @@
+export { PPInfoProductEntityProcessor } from './PPInfoProductProcessor';

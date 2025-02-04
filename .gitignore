@@ -31,9 +31,9 @@ node_modules/
 .env
 .env.test
 
-# Build output
-dist
-dist-types
+# Build output MARK
+# dist
+# dist-types
 
 # Temporary change files created by Vim
 *.swp

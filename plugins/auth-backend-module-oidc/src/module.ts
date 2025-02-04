@@ -38,7 +38,7 @@ export const authModuleIamProvider = createBackendModule({
               console.log("**********" + JSON.stringify(info.result.fullProfile.userinfo));
               const userRef = stringifyEntityRef({
                 kind: 'User',
-                name: info.result.fullProfile.userinfo.preferred_username,
+                name: info.result.fullProfile.userinfo.preferred_username || "defaultName",
                 namespace: DEFAULT_NAMESPACE,
               });
           
