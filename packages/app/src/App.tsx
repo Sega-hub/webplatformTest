@@ -83,21 +83,21 @@ const app = createApp({
     ),
   }],
   components: {
-    // SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
-    SignInPage: props => (
-      <SignInPage
-        {...props}
-        auto
-        providers={
-          [{
-            id: 'iam-oidc',
-            title: 'Keycloak SSO',
-            message: 'Sign in with Keycloak SSO',
-            apiRef: oidcAuthApiRef,
-          }]
-        }
-      />
-    ),
+    SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
+    // SignInPage: props => (
+    //   <SignInPage
+    //     {...props}
+    //     auto
+    //     providers={
+    //       [{
+    //         id: 'iam-oidc',
+    //         title: 'Keycloak SSO',
+    //         message: 'Sign in with Keycloak SSO',
+    //         apiRef: oidcAuthApiRef,
+    //       }]
+    //     }
+    //   />
+    // ),
   },
 });
 
