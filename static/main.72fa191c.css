@@ -9,13 +9,13 @@ a {
 
 @font-face {
   font-family: "MTS Wide";
-  src: local("MTS Wide"),url(./MTSWide-Medium.212f2c28e404c7c5dee7.woff2) format("woff2");
+  src: local("MTS Wide"), url(./MTSWide-Medium.212f2c28e404c7c5dee7.woff2) format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "MTS Text";
-  src: local("MTS Text"),url(./MTSText-Regular.c5426838a3c9abc67231.woff2) format("woff2");
+  src: local("MTS Text"), url(./MTSText-Regular.c5426838a3c9abc67231.woff2) format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -29,7 +29,10 @@ body {
   max-width: 100%;
 }
 .aWmFTUVTDeHSBzH1QALH .kNICsTpNkS23o_Pzreu_ {
-  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  width: 18.88%;
   max-width: 258px;
   background-color: rgb(29, 32, 35);
   border-top-left-radius: 20px;
@@ -80,7 +83,7 @@ body {
 }
 .aWmFTUVTDeHSBzH1QALH .kNICsTpNkS23o_Pzreu_ .WpUWHCJ8tdK9S97H6W_w .yOGnF4_LwvrI8bh3POPV .Z6SkzlAupNcWdSFEHauH {
   width: 128px;
-  margin-left: 30px;
+  margin-left: 20px;
   font-family: "MTS Text";
   font-weight: 400;
   font-size: 14px;
@@ -137,8 +140,9 @@ body {
   align-items: center;
 }
 .aWmFTUVTDeHSBzH1QALH .kNICsTpNkS23o_Pzreu_ .WpUWHCJ8tdK9S97H6W_w .XFAe7NcqY45k3TY12_i7 .ZxzxTX2TYap3yJbElGtH .wnZYIdwClAL6XTl3mEN4 {
-  width: 16px;
-  height: 16px;
+  margin-top: 2px;
+  width: 5.7px;
+  height: 10px;
   margin-left: 10px;
 }
 .aWmFTUVTDeHSBzH1QALH .kNICsTpNkS23o_Pzreu_ .WpUWHCJ8tdK9S97H6W_w .CqixiIem_3nD_5FfY_RS {
@@ -192,7 +196,7 @@ body {
 }
 .aWmFTUVTDeHSBzH1QALH .kNICsTpNkS23o_Pzreu_ .WpUWHCJ8tdK9S97H6W_w .EuUyTLj_4Ka0Fg6iw58Z .Z6SkzlAupNcWdSFEHauH {
   width: 128px;
-  margin-left: 18px;
+  margin-left: 20px;
   font-family: "MTS Text";
   font-weight: 400;
   font-size: 14px;
@@ -202,7 +206,7 @@ body {
   color: rgb(150, 159, 168);
 }
 .aWmFTUVTDeHSBzH1QALH .kNICsTpNkS23o_Pzreu_ .WpUWHCJ8tdK9S97H6W_w .N8eRUAapNHgotx7vtCdQ {
-  margin-top: 339px;
+  margin-top: 33.5%;
   display: flex;
   align-items: center;
 }
@@ -212,7 +216,7 @@ body {
 }
 .aWmFTUVTDeHSBzH1QALH .kNICsTpNkS23o_Pzreu_ .WpUWHCJ8tdK9S97H6W_w .N8eRUAapNHgotx7vtCdQ .Z6SkzlAupNcWdSFEHauH {
   width: 128px;
-  margin-left: 30px;
+  margin-left: 20px;
   font-family: "MTS Text";
   font-weight: 400;
   font-size: 14px;
@@ -232,7 +236,7 @@ body {
 }
 .aWmFTUVTDeHSBzH1QALH .kNICsTpNkS23o_Pzreu_ .WpUWHCJ8tdK9S97H6W_w .rDl9ZhBhbHZakSf_K7FG .Z6SkzlAupNcWdSFEHauH {
   width: 128px;
-  margin-left: 30px;
+  margin-left: 20px;
   font-family: "MTS Text";
   font-weight: 400;
   font-size: 14px;
@@ -261,13 +265,14 @@ body {
   align-items: center;
 }
 .aWmFTUVTDeHSBzH1QALH .kNICsTpNkS23o_Pzreu_ .a1H1mz5Tv51LUEUuQuqW .g1a3xiziud1tdombEawn .KQO5cznXLKFo3VViOt0O {
+  border-radius: 12px;
   width: 32px;
   height: 32px;
 }
 .aWmFTUVTDeHSBzH1QALH .kNICsTpNkS23o_Pzreu_ .a1H1mz5Tv51LUEUuQuqW .p3C24afKaO7Dy1XTTBgF {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+  margin-left: 10px;
   padding-bottom: 35px;
 }
 .aWmFTUVTDeHSBzH1QALH .kNICsTpNkS23o_Pzreu_ .a1H1mz5Tv51LUEUuQuqW .p3C24afKaO7Dy1XTTBgF .D51xFUuqXVY7mWnAmxhb {
@@ -290,8 +295,9 @@ body {
   align-items: center;
 }
 .aWmFTUVTDeHSBzH1QALH .kNICsTpNkS23o_Pzreu_ .a1H1mz5Tv51LUEUuQuqW .p3C24afKaO7Dy1XTTBgF .D51xFUuqXVY7mWnAmxhb .ZxzxTX2TYap3yJbElGtH .Cq_gPDcXxazOneOwClbR {
-  width: 14.85px;
-  height: 16px;
+  margin-top: 5px;
+  width: 5.7px;
+  height: 10px;
 }
 .aWmFTUVTDeHSBzH1QALH .kNICsTpNkS23o_Pzreu_ .a1H1mz5Tv51LUEUuQuqW .p3C24afKaO7Dy1XTTBgF .eQqjAGsGwvpdHT146m3p {
   width: 129px;
@@ -304,6 +310,7 @@ body {
   color: rgb(150, 159, 168);
 }
 .aWmFTUVTDeHSBzH1QALH .YhOggQp6Pciep3l4g1mg {
+  margin-left: 258px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -311,7 +318,9 @@ body {
 .aWmFTUVTDeHSBzH1QALH .YhOggQp6Pciep3l4g1mg .zY_8WLhGFKWVyoHz9dti {
   width: 100%;
   height: 153px;
-  background-image:url(./footage.d62abef2..png);
+  background-image: url(./footage.d62abef2..png);
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
 }
@@ -664,4 +673,4 @@ body {
   margin-left: 5px;
 }/*# sourceMappingURL=MainPage.module.css.map */
 
-/*# sourceMappingURL=main.70e894a5.css.map*/
+/*# sourceMappingURL=main.72fa191c.css.map*/
