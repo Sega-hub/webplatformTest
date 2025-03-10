@@ -1,0 +1,521 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'MTS Wide';
+    src: local('MTS Wide'),
+         url('../assets/fonts/MTSWide-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MTS Text';
+    src: local('MTS Text'),
+         url('../assets/fonts/MTSText-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin menuValue($marginTop, $marginLeft) {
+    margin-top: $marginTop;
+    display: flex;
+    align-items: center;
+    .icon {
+        width: 24px;
+        height: 24px;
+    }
+    .text {
+        width: 128px;
+        margin-left: $marginLeft;
+        font-family: "MTS Text";
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0%;
+        vertical-align: middle;
+        color: rgba(150, 159, 168, 1);
+    }
+}
+
+@mixin title() {
+    font-family: "MTS Wide";
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    color: rgba(29, 32, 35, 1);
+}
+
+@mixin usualText() {
+    font-family: "MTS Text";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+body {
+    background-color: rgb(240, 241, 246);
+}
+
+.main {
+    display: flex;
+    width: 100vw;
+    max-width: 100%;
+    .sideBar {
+        width: 100%;
+        max-width: 258px;
+        background-color: rgba(29, 32, 35, 1);
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        .sideBarHead {
+            margin-top: 55.5px;
+            margin-left: 40px;
+            width: 100%;
+            max-width: 172px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+
+            .sideBarTitle {
+                margin-left: 16px;
+                font-family: "MTS Wide";
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 16px;
+                letter-spacing: 5%;
+                text-transform: uppercase;      
+                color: white;  
+                white-space: nowrap;        
+            }
+        }
+        .sideBarLineTop {
+            margin-left: 20px;
+            margin-top: 60.5px;
+            width: 100%;
+            max-width: 218px;
+            border: 1px solid rgba(127, 140, 153, 0.35);
+        }
+        .sideBarMenu {
+            margin-top: 26px;
+            margin-left: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            .search {
+                @include menuValue(0, 30px);
+            }
+            .home {   
+                @include menuValue(65px, 20px);
+            }
+            .catalog {
+                @include menuValue(14px, 20px);
+                .arrowContainer {
+                    margin-top: 2px;
+                    height: 16px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .arrow {
+                        width: 16px;
+                        height: 16px;
+                        margin-left: 10px;
+                    }
+                }                
+            }
+            .api {
+                @include menuValue(14px, 20px);
+            }
+            .docs {
+                @include menuValue(14px, 20px);
+            }
+            .craete {
+                @include menuValue(65px, 18px);
+            }
+            .settings {
+                @include menuValue(339px, 30px);
+            }
+            .questions {
+                @include menuValue(14px, 30px);
+            }
+        }
+        .sideBarLineBottom {
+            margin-left: 20px;
+            margin-top: 27px;
+            width: 100%;
+            max-width: 218px;
+            border: 1px solid rgba(127, 140, 153, 0.35);
+        }
+        .sideBarAccount {
+            margin-top: 27px;
+            margin-left: 42px;
+            margin-bottom: 35px;
+            display: flex;
+            height: 42px;
+            .imgContainer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .accountImage {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+
+            .accountData {
+                display: flex;
+                flex-direction: column;
+                margin-left: 20px;
+                padding-bottom: 35px;
+
+                .nameContainer {
+                    display: flex;
+                    align-items: center;
+                    .accountName {
+                        width: 129px;
+                        font-family: "MTS Text";
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 20px;
+                        letter-spacing: 0%;
+                        vertical-align: middle;
+                        color: white;
+                    }
+
+                    .arrowContainer {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .accountArrow {
+                            width: 14.85px;
+                            height: 16px;
+                        }
+                    }
+                }
+
+                .accountMail {
+                    width: 129px;
+                    font-family: "MTS Text";
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 20px;
+                    letter-spacing: 0%;
+                    vertical-align: middle;
+                    color: rgba(150, 159, 168, 1);
+                }
+            }
+        }
+    }
+    .page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .pageSearch {
+            width: 100%;
+            height: 153px;
+            background-image: url("../components/mainPage/footage.png");
+            display: flex;
+            justify-content: center;
+            .searchContainer {
+                display: flex;
+                margin-top: 58px;
+                .inputContainer {                                       
+                    display: flex;
+                    align-items: center;
+                    height: 32px;
+                    width: 601px;
+                    background: white; 
+                    border-radius: 13px;
+
+                    .serchIconContainer {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .searchIcon {
+                            width: 11px;
+                            height: 11px;
+                            margin-left: 23px;
+                            margin-top: 4px;
+                        }
+                    }
+
+                    .searchInput {
+                        margin-left: 15px;
+                        height: 32px;
+                        border-radius: 12px;
+                        border: none;
+                        width: 100%;
+                        outline: none !important;
+
+                        font-family: "MTS Text";
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 20px;
+                        letter-spacing: 0%;
+                        vertical-align: middle;
+                        color: rgb(0, 0, 0);
+
+                        &::placeholder {
+                            font-family: "MTS Text";
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 20px;
+                            letter-spacing: 0%;
+                            vertical-align: middle;
+                            color: rgba(98, 108, 119, 1);
+                        }
+                    }
+                }
+
+                .searchbutton {
+                    width: 84px;
+                    height: 32px;
+                    border: none;
+                    border-radius: 12px;
+                    background-color: rgba(255, 0, 50, 1);
+                    margin-left: 16px;
+
+                    font-family: "MTS Wide";
+                    font-weight: 700;
+                    font-size: 10px;
+                    line-height: 12px;
+                    letter-spacing: 5%;
+                    text-align: center;
+                    vertical-align: middle;
+                    text-transform: uppercase;
+                    color: white;
+                }
+               
+            }
+        }
+        .pageVidgets {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .vidgetWrapper {
+                display: flex;
+                margin-top: 26px;
+                width: 1028px;
+                .vidgetFavorite {
+                    width: 506px;
+                    .favoriteTitle {
+                        @include title();
+                    }
+                    .favoriteDiscription {
+                        margin-top: 6px;
+                        @include usualText();
+                        color: rgba(98, 108, 119, 1);
+                    }
+
+                    .favoriteBody {
+                        margin-top: 24px;
+                        width: 506px;
+                        max-width: 506px;
+                        background-color: white;
+                        border-radius: 32px;
+                        padding: 12px 0 24px 0;
+                        .favoriteItem {
+                            padding: 12px 24px 0 24px;
+                            width: 458px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            .favoriteText {
+                                @include usualText();
+                                color: rgba(98, 108, 119, 1);
+                            }
+                            .favoriteIconContainer {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                .favoriteIcon {
+                                    width: 11px;
+                                    height: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .vidgetLatest {
+                    margin-left: 16px;
+                    width: 506px;
+                    .latestTitle {
+                        @include title();
+                    }
+                    .latestDiscription {
+                        margin-top: 6px;
+                        @include usualText();
+                        color: rgba(98, 108, 119, 1);
+                    }
+
+                    .latestBody {
+                        margin-top: 24px;
+                        width: 506px;
+                        max-width: 506px;
+                        background-color: white;
+                        border-radius: 32px;
+                        padding: 12px 0 24px 0;
+                        .latestItem {
+                            padding: 12px 24px 0 24px;
+                            width: 458px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            .latestText {
+                                @include usualText();
+                                color: rgba(0, 112, 229, 1);
+                            }
+                            .latestIconContainer {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                .latestIcon {
+                                    width: 14px;
+                                    height: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .ecosystem {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .ecosystemWraper {
+                display: flex;
+                flex-direction: column;
+                margin-top: 40px;
+                width: 1028px;
+                .ecosystemtitle {
+                    @include title();
+                }
+                .ecosystemDiscription {
+                    @include usualText();
+                    color: rgba(98, 108, 119, 1);
+                }
+                .ecosystemCorusel {
+                    display: flex;
+                    margin-top: 24px;
+                    .coruselItem {
+                        margin-right: 11px;
+                        width: 335px;
+                        min-width: 335px;
+                        height: 80px;                        
+                        border-radius: 24px;
+
+                        &:nth-child(1) {
+                            background: linear-gradient(to right, #5f68b6, #8894e3);
+                        }
+
+                        &:nth-child(2) {
+                            background: linear-gradient(to right, #807fba, #c0b2e0);
+                        }
+
+                        &:nth-child(3) {
+                            background: linear-gradient(to right, #959ed9, #bcd4f8);
+                        }
+
+                        .coruselTitle {
+                            padding: 16px 16px 0 16px;
+                            font-family: "MTS Text";
+                            font-weight: 500;
+                            font-size: 17px;
+                            line-height: 24px;
+                            letter-spacing: 0px;
+                            color: white;
+                        }
+                        .coruselDiscription {
+                            padding: 4px 16px 0 16px;
+                            @include usualText();
+                            color: white;
+                        }
+                    }                  
+                }
+            }
+                    
+        }
+        .platform {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 6px;
+            .platformWraper {
+                display: flex;
+                flex-direction: column;
+                margin-top: 58px;
+                width: 1028px;
+                .platformTitle {
+                    @include title();
+                }
+                .platformDiscription {
+                    @include usualText();
+                    color: rgba(98, 108, 119, 1);
+                }
+                .plaftormItemContainer {
+                    margin-top: 25px;
+                    display: flex;
+                    .platformItem {
+                        width: 239px;
+                        height: 260px;
+                        background-color: white;
+                        border-radius: 32px;
+                        margin-right: 24px;
+                        .platformContent {
+                            width: 191px;
+                            height: 190px;
+                            margin: 35px 24px;
+                            display: flex;
+                            flex-direction: column;
+                            .platfromContentTitle {
+                                font-family: "MTS Text";
+                                font-weight: 500;
+                                font-size: 17px;
+                                line-height: 24px;
+                                letter-spacing: 0px;
+                            }
+                            .platfromContentDiscription {
+                                margin-top: 4px;
+                                @include usualText();
+                                color: rgba(98, 108, 119, 1);
+                            }
+                            .platformIndicator {
+                                display: flex;
+                                .indicatorNumber {
+                                    margin-top: 56px;
+                                    margin-left: 49px;
+                                    font-family: "MTS Wide";
+                                    font-weight: 500;
+                                    font-size: 58.57px;
+                                    line-height: 140%;
+                                    letter-spacing: -5%;
+                                }
+                                .indicatorImg {
+                                    width: 25px;
+                                    height: 21px;
+                                    margin-top: 85px;
+                                    margin-left: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

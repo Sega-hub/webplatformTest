@@ -1,0 +1,665 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "MTS Wide";
+  src: local("MTS Wide"), url("../assets/fonts/MTSWide-Medium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MTS Text";
+  src: local("MTS Text"), url("../assets/fonts/MTSText-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background-color: rgb(240, 241, 246);
+}
+
+.main {
+  display: flex;
+  width: 100vw;
+  max-width: 100%;
+}
+.main .sideBar {
+  width: 100%;
+  max-width: 258px;
+  background-color: rgb(29, 32, 35);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.main .sideBar .sideBarHead {
+  margin-top: 55.5px;
+  margin-left: 40px;
+  width: 100%;
+  max-width: 172px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.main .sideBar .sideBarHead .sideBarTitle {
+  margin-left: 16px;
+  font-family: "MTS Wide";
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 5%;
+  text-transform: uppercase;
+  color: white;
+  white-space: nowrap;
+}
+.main .sideBar .sideBarLineTop {
+  margin-left: 20px;
+  margin-top: 60.5px;
+  width: 100%;
+  max-width: 218px;
+  border: 1px solid rgba(127, 140, 153, 0.35);
+}
+.main .sideBar .sideBarMenu {
+  margin-top: 26px;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.main .sideBar .sideBarMenu .search {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+}
+.main .sideBar .sideBarMenu .search .icon {
+  width: 24px;
+  height: 24px;
+}
+.main .sideBar .sideBarMenu .search .text {
+  width: 128px;
+  margin-left: 30px;
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(150, 159, 168);
+}
+.main .sideBar .sideBarMenu .home {
+  margin-top: 65px;
+  display: flex;
+  align-items: center;
+}
+.main .sideBar .sideBarMenu .home .icon {
+  width: 24px;
+  height: 24px;
+}
+.main .sideBar .sideBarMenu .home .text {
+  width: 128px;
+  margin-left: 20px;
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(150, 159, 168);
+}
+.main .sideBar .sideBarMenu .catalog {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+}
+.main .sideBar .sideBarMenu .catalog .icon {
+  width: 24px;
+  height: 24px;
+}
+.main .sideBar .sideBarMenu .catalog .text {
+  width: 128px;
+  margin-left: 20px;
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(150, 159, 168);
+}
+.main .sideBar .sideBarMenu .catalog .arrowContainer {
+  margin-top: 2px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .sideBar .sideBarMenu .catalog .arrowContainer .arrow {
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+}
+.main .sideBar .sideBarMenu .api {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+}
+.main .sideBar .sideBarMenu .api .icon {
+  width: 24px;
+  height: 24px;
+}
+.main .sideBar .sideBarMenu .api .text {
+  width: 128px;
+  margin-left: 20px;
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(150, 159, 168);
+}
+.main .sideBar .sideBarMenu .docs {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+}
+.main .sideBar .sideBarMenu .docs .icon {
+  width: 24px;
+  height: 24px;
+}
+.main .sideBar .sideBarMenu .docs .text {
+  width: 128px;
+  margin-left: 20px;
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(150, 159, 168);
+}
+.main .sideBar .sideBarMenu .craete {
+  margin-top: 65px;
+  display: flex;
+  align-items: center;
+}
+.main .sideBar .sideBarMenu .craete .icon {
+  width: 24px;
+  height: 24px;
+}
+.main .sideBar .sideBarMenu .craete .text {
+  width: 128px;
+  margin-left: 18px;
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(150, 159, 168);
+}
+.main .sideBar .sideBarMenu .settings {
+  margin-top: 339px;
+  display: flex;
+  align-items: center;
+}
+.main .sideBar .sideBarMenu .settings .icon {
+  width: 24px;
+  height: 24px;
+}
+.main .sideBar .sideBarMenu .settings .text {
+  width: 128px;
+  margin-left: 30px;
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(150, 159, 168);
+}
+.main .sideBar .sideBarMenu .questions {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+}
+.main .sideBar .sideBarMenu .questions .icon {
+  width: 24px;
+  height: 24px;
+}
+.main .sideBar .sideBarMenu .questions .text {
+  width: 128px;
+  margin-left: 30px;
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(150, 159, 168);
+}
+.main .sideBar .sideBarLineBottom {
+  margin-left: 20px;
+  margin-top: 27px;
+  width: 100%;
+  max-width: 218px;
+  border: 1px solid rgba(127, 140, 153, 0.35);
+}
+.main .sideBar .sideBarAccount {
+  margin-top: 27px;
+  margin-left: 42px;
+  margin-bottom: 35px;
+  display: flex;
+  height: 42px;
+}
+.main .sideBar .sideBarAccount .imgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .sideBar .sideBarAccount .imgContainer .accountImage {
+  width: 32px;
+  height: 32px;
+}
+.main .sideBar .sideBarAccount .accountData {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  padding-bottom: 35px;
+}
+.main .sideBar .sideBarAccount .accountData .nameContainer {
+  display: flex;
+  align-items: center;
+}
+.main .sideBar .sideBarAccount .accountData .nameContainer .accountName {
+  width: 129px;
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: white;
+}
+.main .sideBar .sideBarAccount .accountData .nameContainer .arrowContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .sideBar .sideBarAccount .accountData .nameContainer .arrowContainer .accountArrow {
+  width: 14.85px;
+  height: 16px;
+}
+.main .sideBar .sideBarAccount .accountData .accountMail {
+  width: 129px;
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(150, 159, 168);
+}
+.main .page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main .page .pageSearch {
+  width: 100%;
+  height: 153px;
+  background-image: url("../components/mainPage/footage.png");
+  display: flex;
+  justify-content: center;
+}
+.main .page .pageSearch .searchContainer {
+  display: flex;
+  margin-top: 58px;
+}
+.main .page .pageSearch .searchContainer .inputContainer {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  width: 601px;
+  background: white;
+  border-radius: 13px;
+}
+.main .page .pageSearch .searchContainer .inputContainer .serchIconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .page .pageSearch .searchContainer .inputContainer .serchIconContainer .searchIcon {
+  width: 11px;
+  height: 11px;
+  margin-left: 23px;
+  margin-top: 4px;
+}
+.main .page .pageSearch .searchContainer .inputContainer .searchInput {
+  margin-left: 15px;
+  height: 32px;
+  border-radius: 12px;
+  border: none;
+  width: 100%;
+  outline: none !important;
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(0, 0, 0);
+}
+.main .page .pageSearch .searchContainer .inputContainer .searchInput::-moz-placeholder {
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(98, 108, 119);
+}
+.main .page .pageSearch .searchContainer .inputContainer .searchInput::placeholder {
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(98, 108, 119);
+}
+.main .page .pageSearch .searchContainer .searchbutton {
+  width: 84px;
+  height: 32px;
+  border: none;
+  border-radius: 12px;
+  background-color: rgb(255, 0, 50);
+  margin-left: 16px;
+  font-family: "MTS Wide";
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 5%;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: white;
+}
+.main .page .pageVidgets {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .page .pageVidgets .vidgetWrapper {
+  display: flex;
+  margin-top: 26px;
+  width: 1028px;
+}
+.main .page .pageVidgets .vidgetWrapper .vidgetFavorite {
+  width: 506px;
+}
+.main .page .pageVidgets .vidgetWrapper .vidgetFavorite .favoriteTitle {
+  font-family: "MTS Wide";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: rgb(29, 32, 35);
+}
+.main .page .pageVidgets .vidgetWrapper .vidgetFavorite .favoriteDiscription {
+  margin-top: 6px;
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(98, 108, 119);
+}
+.main .page .pageVidgets .vidgetWrapper .vidgetFavorite .favoriteBody {
+  margin-top: 24px;
+  width: 506px;
+  max-width: 506px;
+  background-color: white;
+  border-radius: 32px;
+  padding: 12px 0 24px 0;
+}
+.main .page .pageVidgets .vidgetWrapper .vidgetFavorite .favoriteBody .favoriteItem {
+  padding: 12px 24px 0 24px;
+  width: 458px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main .page .pageVidgets .vidgetWrapper .vidgetFavorite .favoriteBody .favoriteItem .favoriteText {
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(98, 108, 119);
+}
+.main .page .pageVidgets .vidgetWrapper .vidgetFavorite .favoriteBody .favoriteItem .favoriteIconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .page .pageVidgets .vidgetWrapper .vidgetFavorite .favoriteBody .favoriteItem .favoriteIconContainer .favoriteIcon {
+  width: 11px;
+  height: 14px;
+}
+.main .page .pageVidgets .vidgetWrapper .vidgetLatest {
+  margin-left: 16px;
+  width: 506px;
+}
+.main .page .pageVidgets .vidgetWrapper .vidgetLatest .latestTitle {
+  font-family: "MTS Wide";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: rgb(29, 32, 35);
+}
+.main .page .pageVidgets .vidgetWrapper .vidgetLatest .latestDiscription {
+  margin-top: 6px;
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(98, 108, 119);
+}
+.main .page .pageVidgets .vidgetWrapper .vidgetLatest .latestBody {
+  margin-top: 24px;
+  width: 506px;
+  max-width: 506px;
+  background-color: white;
+  border-radius: 32px;
+  padding: 12px 0 24px 0;
+}
+.main .page .pageVidgets .vidgetWrapper .vidgetLatest .latestBody .latestItem {
+  padding: 12px 24px 0 24px;
+  width: 458px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main .page .pageVidgets .vidgetWrapper .vidgetLatest .latestBody .latestItem .latestText {
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(0, 112, 229);
+}
+.main .page .pageVidgets .vidgetWrapper .vidgetLatest .latestBody .latestItem .latestIconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .page .pageVidgets .vidgetWrapper .vidgetLatest .latestBody .latestItem .latestIconContainer .latestIcon {
+  width: 14px;
+  height: 14px;
+}
+.main .page .ecosystem {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .page .ecosystem .ecosystemWraper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  width: 1028px;
+}
+.main .page .ecosystem .ecosystemWraper .ecosystemtitle {
+  font-family: "MTS Wide";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: rgb(29, 32, 35);
+}
+.main .page .ecosystem .ecosystemWraper .ecosystemDiscription {
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(98, 108, 119);
+}
+.main .page .ecosystem .ecosystemWraper .ecosystemCorusel {
+  display: flex;
+  margin-top: 24px;
+}
+.main .page .ecosystem .ecosystemWraper .ecosystemCorusel .coruselItem {
+  margin-right: 11px;
+  width: 335px;
+  min-width: 335px;
+  height: 80px;
+  border-radius: 24px;
+}
+.main .page .ecosystem .ecosystemWraper .ecosystemCorusel .coruselItem:nth-child(1) {
+  background: linear-gradient(to right, #5f68b6, #8894e3);
+}
+.main .page .ecosystem .ecosystemWraper .ecosystemCorusel .coruselItem:nth-child(2) {
+  background: linear-gradient(to right, #807fba, #c0b2e0);
+}
+.main .page .ecosystem .ecosystemWraper .ecosystemCorusel .coruselItem:nth-child(3) {
+  background: linear-gradient(to right, #959ed9, #bcd4f8);
+}
+.main .page .ecosystem .ecosystemWraper .ecosystemCorusel .coruselItem .coruselTitle {
+  padding: 16px 16px 0 16px;
+  font-family: "MTS Text";
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: white;
+}
+.main .page .ecosystem .ecosystemWraper .ecosystemCorusel .coruselItem .coruselDiscription {
+  padding: 4px 16px 0 16px;
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: white;
+}
+.main .page .platform {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.main .page .platform .platformWraper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 58px;
+  width: 1028px;
+}
+.main .page .platform .platformWraper .platformTitle {
+  font-family: "MTS Wide";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: rgb(29, 32, 35);
+}
+.main .page .platform .platformWraper .platformDiscription {
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(98, 108, 119);
+}
+.main .page .platform .platformWraper .plaftormItemContainer {
+  margin-top: 25px;
+  display: flex;
+}
+.main .page .platform .platformWraper .plaftormItemContainer .platformItem {
+  width: 239px;
+  height: 260px;
+  background-color: white;
+  border-radius: 32px;
+  margin-right: 24px;
+}
+.main .page .platform .platformWraper .plaftormItemContainer .platformItem .platformContent {
+  width: 191px;
+  height: 190px;
+  margin: 35px 24px;
+  display: flex;
+  flex-direction: column;
+}
+.main .page .platform .platformWraper .plaftormItemContainer .platformItem .platformContent .platfromContentTitle {
+  font-family: "MTS Text";
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+.main .page .platform .platformWraper .plaftormItemContainer .platformItem .platformContent .platfromContentDiscription {
+  margin-top: 4px;
+  font-family: "MTS Text";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgb(98, 108, 119);
+}
+.main .page .platform .platformWraper .plaftormItemContainer .platformItem .platformContent .platformIndicator {
+  display: flex;
+}
+.main .page .platform .platformWraper .plaftormItemContainer .platformItem .platformContent .platformIndicator .indicatorNumber {
+  margin-top: 56px;
+  margin-left: 49px;
+  font-family: "MTS Wide";
+  font-weight: 500;
+  font-size: 58.57px;
+  line-height: 140%;
+  letter-spacing: -5%;
+}
+.main .page .platform .platformWraper .plaftormItemContainer .platformItem .platformContent .platformIndicator .indicatorImg {
+  width: 25px;
+  height: 21px;
+  margin-top: 85px;
+  margin-left: 5px;
+}/*# sourceMappingURL=MainPage.module.css.map */

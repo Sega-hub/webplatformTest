@@ -6,7 +6,7 @@
   "backstage": {
     "role": "frontend"
   },
-  "homepage": "https://Sega-hub.github.io/testMTS",
+  "homepage": "https://Sega-hub.github.io/webplatformTest",
   "scripts": {
     "start": "backstage-cli package start",
     "build": "backstage-cli package build",
