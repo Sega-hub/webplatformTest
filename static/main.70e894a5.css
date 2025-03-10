@@ -9,13 +9,13 @@ a {
 
 @font-face {
   font-family: "MTS Wide";
-  src: local("MTS Wide"), url(/MTSWide-Medium.212f2c28e404c7c5dee7.woff2) format("woff2");
+  src: local("MTS Wide"), url(./static/MTSWide-Medium.212f2c28e404c7c5dee7.woff2) format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "MTS Text";
-  src: local("MTS Text"), url(/MTSText-Regular.c5426838a3c9abc67231.woff2) format("woff2");
+  src: local("MTS Text"), url(./static/MTSText-Regular.c5426838a3c9abc67231.woff2) format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -311,7 +311,7 @@ body {
 .aWmFTUVTDeHSBzH1QALH .YhOggQp6Pciep3l4g1mg .zY_8WLhGFKWVyoHz9dti {
   width: 100%;
   height: 153px;
-  background-image: url(/footage.d62abef2..png);
+  background-image: url(./static/footage.d62abef2..png);
   display: flex;
   justify-content: center;
 }
